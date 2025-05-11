@@ -1,0 +1,29 @@
+ArrayList<E>
+add(E e), add(int index, E element), get(int index), set(int index, E element), remove(int index), remove(Object o), size(), 
+contains(Object o), indexOf(Object o), clear(), isEmpty()
+
+LinkedList<E>
+Inherits from List and Deque interfaces
+add(E e), addFirst(E e), addLast(E e), removeFirst(), removeLast(), getFirst(), getLast(), remove(Object o), contains(Object o), size(), clear(), isEmpty()
+
+PriorityQueue<E> (Min-Heap by default)
+offer(E e), poll(), peek(), remove(Object o), contains(Object o), size(), clear(), isEmpty()
+
+ArrayDeque<E> (Deque Implementation)
+addFirst(E e), addLast(E e), removeFirst(), removeLast(), peekFirst(), peekLast(), offerFirst(E e), offerLast(E e), pollFirst(), pollLast(), isEmpty(), size(), clear()
+
+LinkedHashSet<E> (Maintains Insertion Order)
+add(E e), remove(Object o), contains(Object o), size(), clear(), isEmpty(), iterator()
+
+TreeSet<E> (SortedSet - Red-Black Tree Implementation)
+first(), last(), higher(E e), lower(E e), ceiling(E e), floor(E e), pollFirst(), pollLast(), remove(Object o), contains(Object o), size(), clear(), isEmpty()
+
+HashMap<K, V>
+put(K key, V value), get(Object key), remove(Object key), containsKey(Object key), containsValue(Object value), keySet(), values(), entrySet(), size(), clear(), isEmpty()
+
+TreeMap<K, V> (SortedMap - Red-Black Tree Implementation)
+put(K key, V value), get(Object key), remove(Object key), containsKey(Object key), containsValue(Object value), firstKey(), lastKey(), higherKey(K key), 
+lowerKey(K key), ceilingKey(K key), floorKey(K key), pollFirstEntry(), pollLastEntry(), size(), clear(), isEmpty()
+
+LinkedHashMap<K, V> (Maintains Insertion Order)
+Same as HashMap but maintains order of insertion.

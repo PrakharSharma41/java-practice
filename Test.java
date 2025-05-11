@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +18,7 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +27,16 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.Stack;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Consumer;
@@ -37,6 +46,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import org.w3c.dom.ranges.Range;
+
 
 class Test{
     public int longestConsecutive(int[] nums) {
@@ -44,6 +55,7 @@ class Test{
         for(int i=0;i<nums.length;i++){
             mp.put(nums[i], 1);
         }
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         int ans=1;
         for(Integer key: mp.keySet()){
             int val=mp.get(key),count=1;
@@ -242,8 +254,8 @@ class Test{
         // StreamExample ste=new StreamExample();
         // ste.check();
         // ste.flatMap();
-        Thread tr=new abcd();
-        tr.start();
+        // Thread tr=new abcd();
+        // tr.start();
         // Thread thread=new Thread(()->{
         //     try {
         //         Thread.sleep(8000);
@@ -308,8 +320,23 @@ class Test{
         // for(int i=0;i<val.length();i++){
         //     // val.
         // }
+        // PriorityBlockingQueue<Integer> pq=new PriorityBlockingQueue<>();
+        // pq.add(null);
+        // ConcurrentLinkedDeque dq=new ConcurrentLinkedDeque<>();
+        // dq.addFirst(dq);
+    //     AtomicInteger atr=new AtomicInteger(0);
+    //    System.out.println("value set "+ atr.compareAndSet(1, 1));
+        // Map<String, Integer> syncMap = Collections.synchronizedMap(new HashMap<>());
+        // SortedMap<Integer, String> syncTreeMap = Collections.synchronizedSortedMap(new TreeMap<>());
+        // Map<Integer, String> syncLinkedMap = Collections.synchronizedMap(new LinkedHashMap<>());
+        // LinkedBlockingQueue<Integer>q=new LinkedBlockingQueue<>();
+        // List<Integer>ans=Arrays.asList(4,3,5,1,7);
+        // System.out.println(ans);
+        // List<Integer>ls=new LinkedList<>();
+        // ls.addLast(12);
+        // System.out.println(ls.removeLast());
+       
         // for(Character c:val){
-
         // }
         // int [] hash=new int[245];
         // Character chr='a';
@@ -354,13 +381,67 @@ class Test{
 
         //     @Override
         //     public void run() {
-        //         System.out.println("inside run");
-                // TODO Auto-generated method stub
-                // throw new UnsupportedOperationException("Unimplemented method 'run'");
+        //         System.out.println("inside runkjnkjnkl");
         //     };
             
         // };
         // rtr.run();
+        // Thread tt=new Thread(rtr);tt.start();
+        // HashSet<String>hs=new HashSet();
+        // hs.add("adsa");
+        // List<String>str=new ArrayList<>();
+        // HashMap<String,String>mp=new HashMap();
+        // Deque<Integer>dq=new LinkedList<>();
+        // mp.re
+        // int[] arr=new int[256];
+        // arr['a']=2;
+        // System.out.println("hbasojdna "+(char)(98));
+        // ArrayList<Integer>arr=new ArrayList<>();
+        // arr.add(1);
+        // arr.add(2);
+        // System.out.println("Arr is "+arr);
+        // HashMap<String,Integer>mp=new HashMap<>();
+        // mp.forEach((a,b)->{
+
+        // });
+        // String str="";
+        // HashMap<Character,List<Character>>mp=new HashMap<>();
+        // char c='a';
+        // for(int i=2;i<=9;i++){
+        //     if(i!=7&&i!=9)
+        //     mp.put((char)(i+'0'),Arrays.asList(c++,c++,c++));
+        //     else 
+        //     mp.put((char)(i+'0'),Arrays.asList(c++,c++,c++,c++));
+        // }
+        // System.out.println(mp.get('7'));
+        // String x=String.valueOf(12);
+        // System.out.println(ans);
+        // Queue<Integer>q=new LinkedList<>();
+        // List<String[]> badge_times = Arrays.asList(
+        //     new String[]{"Paul", "1355"}, new String[]{"Jennifer", "1910"}, new String[]{"Jose", "835"},
+        //     new String[]{"Jose", "830"}, new String[]{"Paul", "1315"}, new String[]{"Chloe", "0"},
+        //     new String[]{"Chloe", "1910"}, new String[]{"Jose", "1615"}, new String[]{"Jose", "1640"},
+        //     new String[]{"Paul", "1405"}, new String[]{"Jose", "855"}, new String[]{"Jose", "930"},
+        //     new String[]{"Jose", "915"}, new String[]{"Jose", "730"}, new String[]{"Jose", "940"},
+        //     new String[]{"Jennifer", "1335"}, new String[]{"Jennifer", "730"}, new String[]{"Jose", "1630"},
+        //     new String[]{"Jennifer", "5"}, new String[]{"Chloe", "1909"}, new String[]{"Zhang", "1"},
+        //     new String[]{"Zhang", "10"}, new String[]{"Zhang", "109"}, new String[]{"Zhang", "110"},
+        //     new String[]{"Amos", "1"}, new String[]{"Amos", "2"}, new String[]{"Amos", "400"},
+        //     new String[]{"Amos", "500"}, new String[]{"Amos", "503"}, new String[]{"Amos", "504"},
+        //     new String[]{"Amos", "601"}, new String[]{"Amos", "602"}, new String[]{"Paul", "1416"}
+        // );        
+
+        // TreeMap<Integer,Integer>hm=new TreeMap<>();
+        // TreeSet<Integer>ts=new TreeSet<>();
+        // ts.add(12313);
+        // ts.forEach(i->System.out.println(i));
+        // Arrays.sort(args);
+        // for(int i=2;i<=9;i++){
+
+        // }
+    
+        // int[] x=arr.stream().mapToInt(Integer::intValue).toArray();
+        // arr.stream().Int
         // RunnableExample rt=new RunnableExample();
         // Thread th=new Thread(()->{
         //         System.out.println(Thread.currentThread().getName());
@@ -448,7 +529,33 @@ class Test{
         // person.check();
         // varArgs(1,2,3,4);
         // int x=(int)Math.random()*100;
-        // System.out.println(lowerbound(new ArrayList<Integer>(Arrays.asList(1,1,1,1,100)),20));
+        // TreeMap<Integer,Integer>tr1=new TreeMap<>();
+        // class Pair{
+        //     int c,p;
+        //     Pair(int c,int p){
+        //         this.c=c;this.p=p;
+        //     }           
+        // }
+        // TreeMap<Pair,Integer>tr1=new TreeMap<>((Pair a,Pair b)->{
+        //     if(a.c!=b.c)return a.c-b.c;
+        //     return a.p-b.p;
+        // });        
+        // TreeSet<Pair>tr1=new TreeSet<>((Pair a,Pair b)->{
+        //     if(a.c!=b.c)return a.c-b.c;
+        //     return a.p-b.p;
+        // });
+        // Pair p1=new Pair(10, 10);
+        // tr1.put(p1,1);
+        // tr1.put(p1,tr1.get(p1)+1);
+        // tr1.put(new Pair(10, 30),1);
+
+        // for(Map.Entry<Pair,Integer> p:tr1.entrySet()){
+        //     System.out.println(p.getKey().c+" "+p.getValue());
+        // }        
+        // Pair p=tr1.floor(new Pair(10, -5));
+        
+        // System.out.println(p.c+" "+p.p);
+        // System.out.println(lowerbound(new ArrayList<Integer>(Arrays.asList(1,1,1,1,1)),1));
         // System.out.println(upperbound(new ArrayList<Integer>(Arrays.asList(1,20,20,30,40,40,40,50,50,60)),21));
         // Map<Integer,Integer>mp=new HashMap<>();
         // Trie1 trie=new Trie1();
@@ -495,10 +602,219 @@ class Test{
         // double x=(double)(1-2)/(6-3);
         // System.out.println(x);
         // LinkedList<Integer>ls=new LinkedList<>();
-        TreeMap<Integer,Integer> tm=new TreeMap<>();
-        tm.put(1, 1);
-        System.out.println(tm.ceilingKey(100));;
+        // String s="";
+        // s.length();
+        // s.equals(s)
+        // PriorityQueue<Integer>pq=new PriorityQueue<>();
+        // pq.isEmpty()
+        // List<List<Integer>>adjList=new ArrayList<>();
+        // adjList.set(0, new ArrayList<>());
+        // Queue<Integer>q=new LinkedList<>();
+        // q.add(null);
+        // TreeMap<Integer,Integer> tm=new TreeMap<>();
+        // tm.put(1, 1);
+        // System.out.println(tm.ceilingKey(100));;
+        // [-7, -2, -1, -1, 1, 2, 2, 2, 3, 5] 
+        // int x=testUber(new ArrayList<>(Arrays.asList(-7,-2,-1,-1,1,2,2,2,3,5)),2);
+        // System.out.println("x is "+x);
+        // TreeSet<Integer>trs=new TreeSet<>();
+        // TreeMap<Integer,Integer>trm=new TreeMap<>();
+        // Collections.re
+        // Arrays.copyOf(null, 0,);
+        // int n=6,k=2;
+        // int[][]dp=new int[n+1][k+1];
+        // ArrayList<ArrayList<Integer>>adj=new ArrayList<>();
+        // adj.add(new ArrayList<>());
+        // adj.add(new ArrayList<>(Arrays.asList(2)));
+        // adj.add(new ArrayList<>(Arrays.asList(5,3)));
+        // adj.add(new ArrayList<>(Arrays.asList(4)));
+        // adj.add(new ArrayList<>());
+        // adj.add(new ArrayList<>());
+        // dfs(adj,dp,1,k);
+        // for(int i=1;i<=5;i++){
+        //     System.out.println("pair from root is "+dp[i][2]);
+        // }
+        // System.out.println("ans is "+ans);
+        // Deque<Integer>qz=new LinkedList<>(); // 1 2 
+        // qz.add(1);
+        // qz.add(2);
+        // // System.out.println(qz.peek());
+        // qz.remove();
+        // qz.add(3);
+        // System.out.println(qz.peek());
+        // TreeMap<String,String>mp=new TreeMap<>();
+        // Map.Entry<String,String>i=mp.floorEntry("As");
+        
+        // List<List<Integer>>ans=new ArrayList<>();
+        // Node root=new Node(1);
+        // root.left=new Node(2);
+        // root.right=new Node(3);
+        // root.left.left=new Node(4);
+        // root.left.right=new Node(5);
+        // find(root,ans);
+        // System.out.println("akjsnas");
+        // for(List<Integer>ls:ans){
+        //     for(int i:ls){
+        //         System.out.print(i+" ");
+        //     }
+        //     System.out.println();
+        // }
+        // char c='a';
+        // String val="abcd";
+        // Stack<Character>st=new Stack<>();
+        // StringBuilder sb=new StringBuilder();
+
+        // sb.append("as");
+        // sb.reverse();
+        
+        // System.out.println(sb);
+        // System.out.println(findReward(new int[]{0,0,0,2}, new int[]{0,2,2,3}, 2));
+        // System.out.println(countBits(2));
+        // TreeMap<Integer,Integer>mp=new TreeMap<>();
+        // mp.firstEntry().getValue();
+        // mp.cei
+        // // mp.lastEntry()
+        // int[] x=new int[]{};
+        // Arrays.stream(x).boxed().toArray();
+        // Integer[] itr=new Integer[];
+        // x=Arrays.stream(itr).mapToInt(Integer::intValue).toArray();
+        // int[][][]dp=new int[][][];
+        splitwiseTest(new int[][]{{1,2,100},{2,3,100},{3,4,200}});
     }
+
+    public static void splitwiseTest(int[][]transactions){ //{{a,b,c},{d,e,f}} a gives c amount of money to b
+        HashMap<Integer,Integer>mp=new HashMap<>();
+        for(int[] i:transactions){
+            mp.put(i[0],mp.getOrDefault(i[0], 0)-i[2]);
+            mp.put(i[1],mp.getOrDefault(i[1], 0)+i[2]);
+        }
+        List<int[]>balanceList=new ArrayList<>();
+        mp.forEach((user,amount)->{
+            balanceList.add(new int[]{user,amount});
+            System.out.println(user+" "+amount);
+        });
+        List<int[]>ans=new ArrayList<>(); // [{a,b,c},{d,e,f}]  a paid c amount to b
+        System.out.println("minimum transactions are "+dfs(balanceList,0,ans));
+        for(int i=0;i<ans.size();i++){
+            System.out.println(ans.get(i)[0]+" paid "+ans.get(i)[2]+" amount to "+ans.get(i)[1]);
+        }
+    }
+
+    public static int dfs(List<int[]> balanceList, int currentIndex, List<int[]> ans) {
+        while (currentIndex < balanceList.size() && balanceList.get(currentIndex)[1] == 0) {
+            currentIndex++;
+        }
+
+        if (currentIndex == balanceList.size()) return 0;
+
+        int minTransactions = Integer.MAX_VALUE;
+        int thisUser = balanceList.get(currentIndex)[0];
+        int thisAmount = balanceList.get(currentIndex)[1];
+
+        for (int i = currentIndex + 1; i < balanceList.size(); i++) {
+            int otherAmount = balanceList.get(i)[1];
+            int otherUser = balanceList.get(i)[0];
+
+            // They must be of opposite signs (debtor vs creditor)
+            if (thisAmount * otherAmount < 0) {
+                int amountToSettle = Math.min(Math.abs(thisAmount), Math.abs(otherAmount));
+                int sign = thisAmount > 0 ? -1 : 1;
+
+                // Update balances
+                balanceList.get(i)[1] += sign * amountToSettle;
+                balanceList.get(currentIndex)[1] -= sign * amountToSettle;
+
+                ans.add(new int[]{thisUser, otherUser, amountToSettle});
+
+                int transactions = 1 + dfs(balanceList, currentIndex + 1, ans);
+                minTransactions = Math.min(minTransactions, transactions);
+
+                // Backtrack
+                ans.remove(ans.size() - 1);
+                balanceList.get(i)[1] = otherAmount;
+                balanceList.get(currentIndex)[1] = thisAmount;
+
+                // Optional: Optimization to stop early
+                if (balanceList.get(i)[1] == 0) break;
+            }
+        }
+
+        return minTransactions == Integer.MAX_VALUE ? 0 : minTransactions;
+    }
+    // public static String findLargestTreeRoot(Map<String, String> childParentMap) {
+    //     HashMap<String,Integer>mp=new HashMap<>();
+    //     for(Map.Entry<String,String>etr:childParentMap.entrySet()){
+    //         String child=etr.getKey();
+    //         String parent=etr.getValue();
+    //         if(mp.containsKey(child)==false){
+    //             mp.put(parent,1+dfs(child,mp,childParentMap));
+    //         }else{
+    //             mp.put(parent,);
+    //         }
+    //     }
+    // }
+    // public static int dfs(String node,HashMap<String,Integer>mp,Map<String, String> childParentMap){
+    //     if(childParentMap.containsKey(node)==false)return 0;
+    //     if(mp.containsKey(node))return mp.get(node);
+    //     int size=1+dfs(childParentMap.get(node),mp.childParentMap);
+    //     mp.put(node,size);
+    //     return size;
+    // }
+    public static int findReward(int[] reward1,int[] reward2,int k){
+        int n=reward1.length;
+        int[][] dp=new int[n+1][k+1];
+        for (int i = 0; i <= n; i++)
+        Arrays.fill(dp[i], Integer.MIN_VALUE);
+        dp[0][0] = 0;
+        for(int i=1;i<=n;i++){
+            for(int j=0;j<=Math.min(i,k);j++){
+                dp[i][j]=Math.max(dp[i-1][j]+reward2[i-1],dp[i][j]);    // intern 2
+                if(j>0)
+                dp[i][j]=Math.max(dp[i-1][j-1]+reward1[i-1],dp[i][j]); // intern 1
+                                         
+            }
+        }
+        return dp[n][k];
+    }
+    public static int countBits(int n){
+        int ans=0;
+        while(n>0){
+            ans++;
+            n/=2;
+        }
+        return ans;
+    }
+    public static int find(Node root,List<List<Integer>>ans){
+        if(root==null)return 0;
+        int leftHeight=find(root.left,ans);
+        int rightHeight=find(root.right,ans);
+        int nodeHeight=Math.max(leftHeight,rightHeight)+1;
+        if(ans.size()<nodeHeight)ans.add(new ArrayList<>());
+        ans.get(nodeHeight-1).add(root.value);
+        return nodeHeight;
+    }
+    static class Node{
+        int value;
+        Node left,right;
+        Node(int value){
+            this.value=value;
+        }
+    }
+    static int ans=0;
+    public static void dfs(ArrayList<ArrayList<Integer>>adj,int[][]dp,int root,int k){
+        dp[root][0]=1;
+        for(Integer node:adj.get(root)){
+            dfs(adj,dp,node,k);
+            for(int i=0;i<k;i++){
+                ans+=dp[node][i]*dp[root][k-i-1];
+                System.out.println(root+" "+node+" "+ i+" "+ans);
+            }
+            for(int i=1;i<=k;i++){
+                dp[root][i]+=dp[node][i-1];
+            }            
+        }
+    }
+
     public static void test(int[][]paint){
         TreeMap<Interval,Interval>mp=new TreeMap<>();
         
@@ -532,6 +848,38 @@ class Test{
         System.out.println("higher power of 2 is: "+ans);
 
         return 0;
+    }
+    
+    public static int search(List<Integer>a,List<Integer>b,int k){
+        int n=a.size(),m=b.size();
+        if(n>m)return search(b, a, k);
+        int low=Math.max(0,k-m),high=Math.min(k,n);
+        while(low<=high){
+            int mid1=(low+high)/2;
+            int mid2=k-mid1;
+            int l1=Integer.MIN_VALUE,l2=Integer.MIN_VALUE;
+            int r1=Integer.MAX_VALUE,r2=Integer.MAX_VALUE;
+            if(mid1<n)r1=a.get(mid1);
+            if(mid2<m)r2=b.get(mid2);
+            if(mid1>0)l1=a.get(mid1-1);
+            if(mid2>0)l2=b.get(mid2-1);
+            if(l1<=r2&&l2<=r1){
+                return Math.max(l1,l2)*Math.max(l1,l2);
+            }
+            if(l1>r2){
+                high=mid1-1;
+            }else{
+                low=mid1+1;
+            }
+        }
+        return 0;
+    }
+    public static int testUber(ArrayList<Integer> arr,int k){
+        int pivot=lowerbound(arr, 0);
+        System.out.println("pivot is "+pivot);
+        if(pivot==arr.size())return arr.get(arr.size()-k)*arr.get(arr.size()-k);
+        if(pivot==0)return arr.get(k-1)*arr.get(k-1);
+        else return search(arr.subList(0, pivot),arr.subList(pivot, arr.size()),k);
     }
     public static int lowerbound(ArrayList<Integer>ls,int val){
         int l=0,r=ls.size()-1,mid,ans=ls.size();
@@ -573,6 +921,8 @@ class Test{
         int[][]paint=new int[][]{{1,3},{4,7},{8,9},{1,10}};
         TreeSet<Range>tr=new TreeSet<>();
         int n=paint.length;
+        TreeMap<Integer,Integer>mp=new TreeMap<>();
+        // int x=(int)(Math.random()*100);
         List<Integer>ans=new ArrayList<>();
         for(int i=0;i<n;i++){
             int st=paint[i][0];
@@ -594,5 +944,6 @@ class Test{
             System.out.println(ans.get(i));
         }
     }
+    
 
 }

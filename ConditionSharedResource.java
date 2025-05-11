@@ -15,7 +15,7 @@ public class ConditionSharedResource {
             }
             isAvailable=true;
             condition.signal();
-        }catch(Exception e){
+    }catch(Exception e){
             System.out.println("exception occured");
         }
         finally{
