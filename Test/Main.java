@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
         // {'a', 'l', 'o', 's', 's', 'e', 'c', 'c'},
         // {'w', 'o', 'o', 'w', 'a', 'c', 'a', 'w'},
         // {'i', 'b', 'w', 'o', 'w', 'w', 'o', 'w'}};
-        // Test test=new Test(grid);
+        // GridSearch test=new GridSearch(grid);
         // List<int[]> path=test.location("access");
         // if(path!=null){
         //     for(int[] p:path){
@@ -29,6 +30,35 @@ public class Main {
         // }else{
         //     System.out.println("not present");
         // }
+        DateMap<String> dateMap = new DateMap<>();
+        Date d1 = new Date();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Date d2 = new Date();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Date d3 = new Date();
+
+        dateMap.put(d1, "First");
+        dateMap.put(d2, "Second");
+
+        System.out.println("Get d1: " + dateMap.get(d1)); // "First"
+        System.out.println("Get d2: " + dateMap.get(d2)); // "Second"
+        System.out.println("Get d3 (no exact match): " + dateMap.get(d3)); 
+
+        // Test test=new Test();
+        // System.out.println(test.findNumber(new int[]{1,2,2,3,3}));
+        // BinaryNodeTester tester=new BinaryNodeTester();
+        // BinaryNode root=tester.create();
+        // System.out.println(tester.list(root));
+        // Islands islands=new Islands();
+        // System.out.println(islands.find(3, 3, new int[][]{{0,0},{1,1},{1,0}}));
         // System.out.println(maxSum(new int[]{1, -2, 3, 4, -1, 2, 1, -5, 4}));
         // System.out.println(maxProduct(new int[]{2, 0, -2, 4}));
         // 1 2 3 5 6 4 7 8 9
